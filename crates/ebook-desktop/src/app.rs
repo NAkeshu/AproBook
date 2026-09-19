@@ -920,9 +920,18 @@ fn selected_bulk_action(kind: &str, value: &str, tags: &str) -> Result<BulkActio
     }
 }
 
+fn set_bulk_management(mut home: HomeContext, mut selected: Signal<Option<String>>, active: bool) {
+    home.bulk_mode.set(active);
+    home.bulk_selected.set(BTreeSet::new());
+    home.bulk_delete_confirm.set(false);
+    home.bulk_failures.set(Vec::new());
+    selected.set(None);
+    home.details_open.set(false);
+}
+
 #[component]
 fn BulkToolbar() -> Element {
-    let mut ctx = use_context::<AppContext>();
+    let ctx = use_context::<AppContext>();
     let mut home = use_context::<HomeContext>();
     let mut kind = use_signal(|| "folder".to_string());
     let mut value = use_signal(String::new);
@@ -946,13 +955,7 @@ fn BulkToolbar() -> Element {
     rsx! {
         div { class: if active { "bulk-toolbar active" } else { "bulk-toolbar" },
             button { class: "bulk-mode-button", disabled: *ctx.busy.read(),
-                onclick: move |_| {
-                    home.bulk_mode.toggle();
-                    home.bulk_selected.set(BTreeSet::new());
-                    home.bulk_delete_confirm.set(false);
-                    home.bulk_failures.set(Vec::new());
-                    if !active { ctx.selected.set(None); home.details_open.set(false); }
-                },
+                onclick: move |_| set_bulk_management(home, ctx.selected, !active),
                 if active { "退出批量管理" } else { "批量管理" }
             }
             if active {
@@ -1194,9 +1197,15 @@ fn BookGrid() -> Element {
                     }
                 });
             },
-            onclick: move |_| if !*home.bulk_mode.read() { ctx.selected.set(None); },
+            onclick: move |_| {
+                if *home.bulk_mode.read() {
+                    set_bulk_management(home, ctx.selected, false);
+                } else {
+                    ctx.selected.set(None);
+                }
+            },
             if books.is_empty() {
-                div { class: "empty-state",
+                div { class: "empty-state", onclick: move |event| event.stop_propagation(),
                     div { class: "empty-illustration", Icon { name: if is_library_empty { "books" } else { "search" } } }
                     h2 { if is_library_empty { {zh(Message::EmptyLibrary)} } else { {zh(Message::EmptySearch)} } }
                     p { if is_library_empty { "导入 EPUB、PDF、MOBI 或 TXT，开始建立你的私人书架。" } else { "试试清除搜索词或调整筛选条件。" } }

@@ -3,16 +3,16 @@ set -euo pipefail
 
 project_root="${0:A:h:h}"
 if [[ "$(uname -s)" != "Darwin" || "$(uname -m)" != "arm64" ]]; then
-  print -u2 "AproBook v0.5.0 bundling supports Apple Silicon macOS only."
+  print -u2 "AproBook v0.5.1 bundling supports Apple Silicon macOS only."
   exit 1
 fi
 
-app="$project_root/dist/AproBook-v0.5.0.app"
+app="$project_root/dist/AproBook-v0.5.1.app"
 if [[ -e "$app" ]]; then
   print -u2 "Bundle already exists: $app. Move it aside before rebuilding."
   exit 1
 fi
-staging="$project_root/dist/.AproBook-v0.5.0-building.app"
+staging="$project_root/dist/.AproBook-v0.5.1-building.app"
 if [[ -e "$staging" ]]; then
   print -u2 "Incomplete staging bundle exists: $staging. Move it aside before rebuilding."
   exit 1

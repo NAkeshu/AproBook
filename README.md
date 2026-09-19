@@ -10,12 +10,12 @@ AproBook is a personal library for collecting, organizing, and reading your own 
 
 ## Platform status
 
-**v0.5.0 is developed and verified only for Apple Silicon macOS 13 or later.** Windows, Linux, and Intel Mac are not tested or supported in this release; the Rust workspace and Cargo alone do not guarantee that those platforms build or run correctly. Cross-platform adaptation is outside this version's scope. The macOS bundle includes an arm64 PDFium dynamic library.
+**v0.5.1 is developed and verified only for Apple Silicon macOS 13 or later.** Windows, Linux, and Intel Mac are not tested or supported in this release; the Rust workspace and Cargo alone do not guarantee that those platforms build or run correctly. Cross-platform adaptation is outside this version's scope. The macOS bundle includes an arm64 PDFium dynamic library.
 
 ## What it does
 
 - Import EPUB, PDF, DRM-free MOBI, and TXT files by picker, folder scan, or drag-and-drop. Originals stay untouched; managed copies live inside the chosen library.
-- Edit book metadata, cover, authors, tags, folders, favorite flag, rating, and reading status. Search, filter, sort, and manage multiple selected books at once. Drag a rectangle across the shelf to select books.
+- Edit book metadata, cover, authors, tags, folders, favorite flag, rating, and reading status. Search, filter, sort, and manage multiple selected books at once. Drag a rectangle across the shelf to select books; click blank shelf space to leave bulk management.
 - Read with a table of contents, bookmarks, keyboard navigation, themes and text layout controls. PDF supports page navigation, zoom, fit-width, and fit-page.
 - Resume from saved positions, reveal a managed file in Finder, or remove its managed copy through macOS Trash.
 
@@ -35,10 +35,10 @@ To create a standalone Apple Silicon app:
 
 ~~~sh
 zsh scripts/bundle-macos.sh
-open dist/AproBook-v0.5.0.app
+open dist/AproBook-v0.5.1.app
 ~~~
 
-The script refuses to overwrite an existing v0.5.0 bundle; move that bundle aside before rebuilding. This is a locally ad-hoc-signed development build, **not** a notarized public download.
+The script refuses to overwrite an existing v0.5.1 bundle; move that bundle aside before rebuilding. This is a locally ad-hoc-signed development build, **not** a notarized public download.
 
 ## Libraries, privacy, and upgrading
 
