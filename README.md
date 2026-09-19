@@ -6,7 +6,7 @@
 
 AproBook is a personal library for collecting, organizing, and reading your own digital books. It keeps books and metadata on your machine, remembers where you stopped, and avoids accounts, stores, and cloud services. [Why “AproBook”?](docs/BRAND.md)
 
-![AproBook icon](crates/ebook-desktop/assets/aprobook-icon.svg)
+<p align="center"><img src="crates/ebook-desktop/assets/aprobook-icon.svg" alt="AproBook icon" width="168"></p>
 
 ## Platform status
 
