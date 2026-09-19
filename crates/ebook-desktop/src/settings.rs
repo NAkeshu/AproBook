@@ -256,6 +256,26 @@ mod tests {
     }
 
     #[test]
+    fn migrates_legacy_recent_library_into_new_settings() {
+        let temp = tempfile::tempdir().unwrap();
+        let old = temp.path().join("theEBookViewer");
+        let new = temp.path().join("AproBook");
+        let library = temp.path().join("library");
+        fs::create_dir(&old).unwrap();
+        fs::create_dir(&library).unwrap();
+        fs::write(
+            old.join("last-library.txt"),
+            library.to_string_lossy().as_bytes(),
+        )
+        .unwrap();
+
+        let settings = load_with_legacy(&new, Some(&old)).unwrap();
+        assert_eq!(settings.last_library, Some(library));
+        assert_eq!(load_from(&new).unwrap(), settings);
+        assert!(old.join("last-library.txt").exists());
+    }
+
+    #[test]
     fn new_config_takes_precedence_over_old_config() {
         let temp = tempfile::tempdir().unwrap();
         let old = temp.path().join("theEBookViewer");
