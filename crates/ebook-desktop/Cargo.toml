@@ -1,0 +1,28 @@
+[package]
+name = "ebook-desktop"
+version = "0.5.0"
+edition = "2024"
+publish = false
+
+[[bin]]
+name = "AproBook"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+async-trait = "0.1"
+base64 = "0.22"
+dioxus = { version = "0.7", features = ["desktop"] }
+dirs = "6.0"
+ebook-core = { path = "../ebook-core" }
+rfd = "0.15"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+trash = "5.2"
+tokio = { version = "1.43", features = ["rt", "time"] }
+uuid = { version = "1.11", features = ["v4", "serde"] }
+
+[dev-dependencies]
+lopdf = { workspace = true }
+tempfile = "3.14"
+zip = { workspace = true }

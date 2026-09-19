@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">AproBook — an open book with a subtle crab silhouette and a knowledge sprout</title>
+  <rect x="64" y="64" width="896" height="896" rx="204" fill="#086354"/>
+  <!-- The lower leaf of each page gives the book one unmistakable silhouette. -->
+  <path d="M512 408C429 350 316 329 202 365v388c113-35 226-15 310 47 84-62 197-82 310-47V365c-114-36-227-15-310 43Z" fill="#063F42"/>
+  <!-- The curled outer corners are deliberately small, abstract claw hints. -->
+  <path d="M512 389C429 335 318 318 217 350c-35-8-58-30-73-66 1 48 18 82 55 100v334c117-30 228-5 313 66V389Z" fill="#BDF2D3"/>
+  <path d="M512 389c83-54 194-71 295-39 35-8 58-30 73-66-1 48-18 82-55 100v334c-117-30-228-5-313 66V389Z" fill="#E9FFF1"/>
+  <path d="M512 389v395" fill="none" stroke="#118E83" stroke-width="22" stroke-linecap="round"/>
+  <!-- The book's crease continues upward as a restrained tree-of-knowledge gesture. -->
+  <path d="M512 393V285m0 41-51-53m51 40 51-54" fill="none" stroke="#51CEAF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M449 260c-22-3-39-14-51-34 25-2 45 5 61 25Z" fill="#65D9BF"/>
+  <path d="M575 246c22-4 39-15 51-34-25-1-45 6-61 25Z" fill="#65D9BF"/>
+  <path d="M512 267c-17-17-20-37-11-61 18 15 24 35 20 61Z" fill="#75DFC2"/>
+  <path d="M246 425c69-19 146-8 215 30m-215 51c69-18 146-8 215 29m317-110c-69-19-146-8-215 30m215 51c-69-18-146-8-215 29" fill="none" stroke="#20A6A2" stroke-width="13" stroke-linecap="round" opacity=".55"/>
+</svg>

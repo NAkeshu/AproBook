@@ -1,0 +1,11 @@
+/target/
+/dist/
+*.swp
+.DS_Store
+*.theebook-library.lock
+/.theebook-library.json
+/library.sqlite3
+/items/
+/.env
+/.env.*
+!/.env.example

@@ -1,0 +1,17 @@
+[application]
+name = "AproBook"
+default_platform = "desktop"
+
+[web.app]
+title = "AproBook"
+
+[bundle]
+identifier = "com.tyoukajyu.aprobook"
+publisher = "AproBook"
+resources = ["assets"]
+category = "Book"
+short_description = "一个专注、离线的电子书书库与阅读器"
+long_description = "本地优先的 EPUB、PDF、无 DRM MOBI 与 TXT 书库和阅读器。"
+
+[bundle.macos]
+minimum_system_version = "13.0"

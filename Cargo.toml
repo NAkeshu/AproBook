@@ -1,0 +1,28 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.5.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.85"
+
+[workspace.dependencies]
+ammonia = "4.1"
+fs2 = "0.4"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }
+lopdf = "0.38"
+mobi = "0.8"
+pdfium-render = { version = "=0.8.35", default-features = false, features = ["pdfium_latest", "thread_safe", "image_025"] }
+percent-encoding = "2.3"
+quick-xml = { version = "0.38", features = ["serialize"] }
+regex = "1.11"
+rusqlite = { version = "0.37", features = ["bundled"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+thiserror = "2.0"
+uuid = { version = "1.18", features = ["v4", "serde"] }
+walkdir = "2.5"
+zip = { version = "4.3", default-features = false, features = ["deflate"] }
